@@ -1,0 +1,24 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+	<small class="byline">Built by Astro</small>
+	&copy; {currentYear} Warren
+</footer>
+<style>
+	footer {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 8rem;
+		padding-right: 2rem;
+		padding-left: 2rem;
+		color: var(--t-subdue);
+	}
+
+	.byline {
+		display: block;
+		font-size: var(--f-d2);
+		text-transform: uppercase;
+	}
+</style>
