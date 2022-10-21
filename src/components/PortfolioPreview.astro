@@ -1,12 +1,12 @@
 ---
 import type { MarkdownInstance } from 'astro';
-import type { Project } from '../types';
+import type { Planet } from '../types';
 
 interface Props {
-	project: MarkdownInstance<Project>;
+	planet: MarkdownInstance<Planet>;
 }
 
-const { frontmatter, url } = Astro.props.project;
+const { frontmatter, url } = Astro.props.planet;
 ---
 
 <div class="card">

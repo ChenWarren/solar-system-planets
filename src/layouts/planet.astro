@@ -2,10 +2,10 @@
 import MainHead from '../components/MainHead.astro';
 import Footer from '../components/Footer.astro';
 import Nav from '../components/Nav.astro';
-import type { Project } from '../types';
+import type { Planet } from '../types';
 
 interface Props {
-	content: Project;
+	content: Planet;
 }
 
 const { content } = Astro.props;
@@ -21,7 +21,8 @@ const { content } = Astro.props;
 				background-color: var(--t-fg);
 				background-repeat: no-repeat;
 				background-size: cover;
-				min-height: 25vw;
+				background-position: center;
+				min-height: 40vw;
 				color: white;
 				flex-direction: column;
 				align-items: center;
@@ -55,7 +56,7 @@ const { content } = Astro.props;
 			}
 
 			.leadIn {
-				padding-top: 4em;
+				padding-top: 1em;
 				color: var(--t-bg);
 				background-color: var(--t-fg);
 				text-align: center;
@@ -75,8 +76,8 @@ const { content } = Astro.props;
 			}
 
 			.wrapper {
-				padding-bottom: 4em;
-				margin-bottom: 4em;
+				padding-bottom: 1em;
+				margin-bottom: 1em;
 			}
 
 			footer {
@@ -90,17 +91,17 @@ const { content } = Astro.props;
 		<header style={`background-image:url(${content.img})`} class="hero">
 			<h1 class="title">{content.title}</h1>
 		</header>
+		<div class="wrapper">
+			<div class="content"><slot /></div>
+		</div>
 		<div class="leadIn">
 			<div class="wrapper">
 				{content.tags.map((t) => <span class="tag">{t}</span>)}
 				<h3 class="tagline">{content.description}</h3>
 			</div>
 		</div>
-		<div class="wrapper">
-			<div class="content"><slot /></div>
-		</div>
 		<footer>
-			<a href="/projects" class="button">View More</a>
+			<a href="/planets/" class="button">View More</a>
 		</footer>
 		<Footer />
 	</body>
