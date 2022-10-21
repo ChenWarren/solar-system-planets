@@ -1,7 +1,7 @@
 # The Planets of Solar System
 
 
-[Web site screen shot](./public/assets/images/screenshot-solar-system-planets.png)
+![Web site screen shot](./public/assets/images/screenshot-solar-system-planets.png)
 
 
 ## Introduction
