@@ -12,6 +12,8 @@
 
 	/* Fonts */
 	--f-family: 'Inter', 'system-ui', sans-serif;
+
+	/* Font sizes */
 	--f-u18: 11.390625em;
 	--f-u17: 9.950627481136905em;
 	--f-u16: 8.692673779389363em;
@@ -74,6 +76,7 @@ img {
 
 a {
 	color: var(--t-active);
+	text-decoration: none;
 }
 
 h1 {
@@ -83,10 +86,6 @@ h1 {
 li {
 	list-style: none;
 	padding: 0 0.5rem;
-}
-
-a {
-	text-decoration: none;
 }
 
 .button {
