@@ -6,8 +6,9 @@
 
 ## Introduction
 
-This is a Demo website code by [Astro] (https://astro.build/).
-Developer: Warren Chen
+This is a Demo website code by [Astro](https://astro.build/).
+
+Developer: [Warren Chen](https://github.com/ChenWarren/)
 
 
 ## Astro Commands
