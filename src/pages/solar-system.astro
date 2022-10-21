@@ -1,0 +1,42 @@
+---
+import MainHead from '../components/MainHead.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+---
+
+<html lang="en">
+	<head>
+		<MainHead title="Solar System" description="The introduction about the Solar system" />
+	</head>
+	<body>
+		<Nav />
+		<div class="wrapper">
+			<h1 class="page-title">The Solar System</h1>
+			<div class="heroImg">
+				<img
+					width="1400"
+					height="350"
+					src="https://upload.wikimedia.org/wikipedia/commons/b/b6/Solar-System-White-Sun.svg"
+				/>
+			</div>
+			<div class="bio wrapper">
+				<p>
+					The Solar System is the gravitationally bound system of the Sun and the objects that orbit it, either directly or indirectly. Of the objects that orbit the Sun directly, the largest are the eight planets, with the remainder being significantly smaller objects, such as dwarf planets and small Solar System bodies. 
+				</p>
+				<p>
+					The Solar System formed 4.6 billion years ago from the gravitational collapse of a giant interstellar molecular cloud. The vast majority of the system's mass is in the Sun, with the majority of the remaining mass contained in Jupiter. The four smaller inner planets, Mercury, Venus, Earth and Mars, are terrestrial planets, being primarily composed of rock and metal. The four outer planets are giant planets, being substantially more massive than the terrestrials. The two largest, Jupiter and Saturn, are gas giants, being composed mainly of hydrogen and helium; the two outermost planets, Uranus and Neptune, are ice giants, being composed mostly of substances with relatively high melting points compared to hydrogen and helium, called volatiles, such as water, ammonia and methane. All eight planets have almost circular orbits that lie within a nearly flat disc called the ecliptic.
+				</p>
+				<p>
+					As the Sun is by far the heaviest body in the Solar System, its gravity dominates the motions of the planets. As a result, the planets orbit the Sun in elliptical orbits. The planets are very close to the Sun, making their orbits swift. Mercury, the smallest and innermost planet, completes an orbit every 87.97 Earth days. Venus, Earth's next-door neighbor, completes an orbit every 224.7 Earth days. The outer planets are much more distant from the Sun and take much longer to complete their orbits: Mars orbits the Sun every 687 Earth days, Jupiter every 4,332 Earth days, Saturn every 10,756 Earth days, Uranus every 30,688 Earth days and Neptune every 60,190 Earth days.
+				</p>
+				<p>
+					The planets are small compared to the Sun. Mercury is only slightly larger than Earth's Moon, while Venus is only slightly smaller than Earth. Earth is more than four times as massive as Mercury, while Venus is more than 80% as massive as Earth. The giant planets are much more massive than the terrestrial planets. Jupiter is more than 300 times as massive as Mercury, while Saturn is more than 95 times as massive as Earth. Uranus is more than 14 times as massive as Earth, and Neptune is more than 17 times as massive as Earth.
+				</p>
+                <p class="mt-2">
+                    <a href="/planets">The planets of the Solar System</a>
+                </p>
+			</div>
+		</div>
+		<Footer />
+	</body>
+</html>
