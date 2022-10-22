@@ -5,12 +5,15 @@
 			<div>Planets</div>
 		</div>
 	</a>
-	<ul class="menu-bar">
+	<ul class="desktop-menu">
 		<li><a class="link" href="/"> Home</a></li>
 		<li><a class="link" href="/planets/"> Planets</a></li>
 		<li><a class="link" href="/solar-system/"> Solar System</a></li>
 		<li><a class="link" href="/about/"> About</a></li>
 	</ul>
+	<div class="mobile-menu-icon">
+		<svg id="hamburger-icon" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" xmlns="http://www.w3.org/2000/svg" height="30" id="screenshot-3a89a0d3-ce96-808f-8001-7a9b2d980eef" viewBox="0 0 40 37.856" style="-webkit-print-color-adjust: exact;" fill="gray" version="1.1"><g id="shape-3a89a0d3-ce96-808f-8001-7a9b2d980eef" rx="0" ry="0"><g id="shape-3a89a0d3-ce96-808f-8001-7a9ac761ecb0"><g id="fills-3a89a0d3-ce96-808f-8001-7a9ac761ecb0"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="7.584478112221404e-8" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g><g id="shape-3a89a0d3-ce96-808f-8001-7a9b0526e0de"><g id="fills-3a89a0d3-ce96-808f-8001-7a9b0526e0de"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="14.9280156342638" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g><g id="shape-3a89a0d3-ce96-808f-8001-7a9b084f6455"><g id="fills-3a89a0d3-ce96-808f-8001-7a9b084f6455"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="29.85603119268282" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g></g></svg>
+	</div>
 </nav>
 
 <style>
@@ -25,8 +28,14 @@
 		z-index: 900;
 	}
 
-	.menu-bar {
+	.desktop-menu {
 		display:flex;
+	}
+	
+	.mobile-menu-icon{
+		display: none;
+		height: 100%;
+		padding: 0.25rem;
 	}
 
 	.link {
@@ -53,5 +62,17 @@
 		color: var(--c-blue);
 		font-weight: 700;
 		gap: 0.25rem;
+	}
+	@media (max-width: 750px) {
+		.desktop-menu {
+			display: none;
+		}
+		.mobile-menu-icon {
+			display: block;
+		}
+		.mobile-menu-icon:hover,
+		.mobile-menu-icon:focus {
+			color: var(--t-active);
+		}
 	}
 </style>

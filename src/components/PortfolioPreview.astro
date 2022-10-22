@@ -46,7 +46,7 @@ const { frontmatter, url } = Astro.props.planet;
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		color: white;
+		color: var(--c-white);
 		flex-direction: column;
 		font-size: var(--f-u4);
 		font-weight: 900;
@@ -82,10 +82,10 @@ const { frontmatter, url } = Astro.props.planet;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		color: var(--t-bg);
+		color: var(--c-blue);
 		font-size: var(--f-u2);
 		font-weight: 700;
-		background: rgba(0, 0, 0, 0.25);
+		background: rgba(0, 0, 0, 0.5);
 		opacity: 0;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -100,7 +100,8 @@ const { frontmatter, url } = Astro.props.planet;
 	.link:focus,
 	.link:hover .linkInner {
 		transform: translateY(0);
-		border-color: rgba(255, 255, 255, 0.625);
+		border-color: rgba(70, 180, 255, 0.625);
+		color: var(--c-blue);
 	}
 
 	.linkInner {
@@ -118,6 +119,7 @@ const { frontmatter, url } = Astro.props.planet;
 	.tags {
 		font-size: var(--f-d2);
 		text-transform: uppercase;
+		color: var(--c-gray);
 	}
 
 	.tag {
