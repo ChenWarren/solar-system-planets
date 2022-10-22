@@ -19,6 +19,6 @@ pnpm-debug.log*
 .DS_Store
 
 .firebase
-.vscode
+
 .firebaserc
 firebase.json
