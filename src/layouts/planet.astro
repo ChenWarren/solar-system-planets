@@ -54,19 +54,6 @@ const { content } = Astro.props;
 				letter-spacing: 0.0625em;
 			}
 
-			.leadIn {
-				padding-top: 1em;
-				color: var(--t-bg);
-				background-color: var(--t-fg);
-				text-align: center;
-			}
-
-			.tagline {
-				font-weight: 300;
-				font-size: var(--f-u3);
-				line-height: 1.5;
-			}
-
 			.content {
 				font-size: var(--f-u1);
 				line-height: 2.2;
@@ -75,6 +62,8 @@ const { content } = Astro.props;
 			}
 
 			.wrapper {
+				display: flex;
+				justify-content: center;
 				padding-bottom: 1em;
 				margin-bottom: 1em;
 			}
@@ -103,12 +92,6 @@ const { content } = Astro.props;
 		</header>
 		<div class="wrapper">
 			<div class="content"><slot /></div>
-		</div>
-		<div class="leadIn">
-			<div class="wrapper">
-				{content.tags.map((t) => <span class="tag">{t}</span>)}
-				<h3 class="tagline">{content.description}</h3>
-			</div>
 		</div>
 		<footer>
 			<a href="/planets/" class="button">View More</a>

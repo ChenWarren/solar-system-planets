@@ -15,14 +15,6 @@ const { frontmatter, url } = Astro.props.planet;
 	</div>
 	<div class="descCard">
 		<p class="desc">{frontmatter.description}</p>
-		<div class="tags">
-			Tagged:
-			{frontmatter.tags.map((t) => (
-				<div class="tag" data-tag={t}>
-					{t}
-				</div>
-			))}
-		</div>
 		<a class="link" href={url}>
 			<span class="linkInner">View</span>
 		</a>
@@ -46,7 +38,7 @@ const { frontmatter, url } = Astro.props.planet;
 		align-items: center;
 		justify-content: center;
 		margin: 0;
-		color: var(--c-white);
+		color: var(--c-yellow);
 		flex-direction: column;
 		font-size: var(--f-u4);
 		font-weight: 900;
@@ -62,14 +54,13 @@ const { frontmatter, url } = Astro.props.planet;
 	}
 
 	.descCard {
-		padding: 1.5em;
+		padding: 0.5rem 1.5rem;
 	}
 
 	.desc {
 		font-size: var(--f-u1);
 		line-height: 1.4;
-		margin-top: 0em;
-		margin-bottom: 1em;
+		font-size: 1rem;
 	}
 
 	.link {

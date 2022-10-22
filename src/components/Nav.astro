@@ -11,10 +11,56 @@
 		<li><a class="link" href="/solar-system/"> Solar System</a></li>
 		<li><a class="link" href="/about/"> About</a></li>
 	</ul>
-	<div class="mobile-menu-icon">
+
+	<ul id="mobile-menu">
+		<li><a class="link" href="/"> Home</a></li>
+		<li><a class="link" href="/planets/"> Planets</a></li>
+		<li><a class="link" href="/solar-system/"> Solar System</a></li>
+		<li><a class="link" href="/about/"> About</a></li>
+	</ul>
+
+	<div id="mobile-menu-icon" class="mobile-menu-icon">
+
 		<svg id="hamburger-icon" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" xmlns="http://www.w3.org/2000/svg" height="30" id="screenshot-3a89a0d3-ce96-808f-8001-7a9b2d980eef" viewBox="0 0 40 37.856" style="-webkit-print-color-adjust: exact;" fill="gray" version="1.1"><g id="shape-3a89a0d3-ce96-808f-8001-7a9b2d980eef" rx="0" ry="0"><g id="shape-3a89a0d3-ce96-808f-8001-7a9ac761ecb0"><g id="fills-3a89a0d3-ce96-808f-8001-7a9ac761ecb0"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="7.584478112221404e-8" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g><g id="shape-3a89a0d3-ce96-808f-8001-7a9b0526e0de"><g id="fills-3a89a0d3-ce96-808f-8001-7a9b0526e0de"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="14.9280156342638" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g><g id="shape-3a89a0d3-ce96-808f-8001-7a9b084f6455"><g id="fills-3a89a0d3-ce96-808f-8001-7a9b084f6455"><rect rx="4" ry="4" x="2.0292816316214157e-8" y="29.85603119268282" transform="matrix(1,0,0,1,0,0)" width="40" height="6"/></g></g></g></svg>
+
+		<svg id="close-icon" xmlns:xlink="http://www.w3.org/1999/xlink" width="30" xmlns="http://www.w3.org/2000/svg" height="30" id="screenshot-3a89a0d3-ce96-808f-8001-7abb0fb4ab38" viewBox="-1.104 -1.104 32.208 32.208" style="-webkit-print-color-adjust: exact;" fill="gray" version="1.1"><g id="shape-3a89a0d3-ce96-808f-8001-7abb0fb4ab38"><g id="fills-3a89a0d3-ce96-808f-8001-7abb0fb4ab38"><path rx="0" ry="0" d="M15,11.232L25.452,0.78C26.492,-0.26,28.18,-0.26,29.22,0.78L29.22,0.78C30.26,1.82,30.26,3.508,29.22,4.548L18.768,15L29.22,25.452C30.26,26.492,30.26,28.18,29.22,29.22L29.22,29.22C28.18,30.26,26.492,30.26,25.452,29.22L15,18.768L4.548,29.22C3.508,30.26,1.82,30.26,0.78,29.22L0.78,29.22C-0.26,28.18,-0.26,26.492,0.78,25.452L11.232,15L0.78,4.548C-0.26,3.508,-0.26,1.82,0.78,0.78L0.78,0.78C1.82,-0.26,3.508,-0.26,4.548,0.78L15,11.232Z"/></g></g></svg>
 	</div>
 </nav>
+
+<!-- Mobile menu toggle script -->
+<script>
+	let showingHamburger = true;
+	const hamburgerIcon = document.getElementById('hamburger-icon');
+	const closeIcon = document.getElementById('close-icon');
+	const mobileMenu = document.getElementById('mobile-menu');
+
+	function handleMenuIconClick () {
+		showingHamburger = !showingHamburger;
+	
+		if (showingHamburger) {
+			if(hamburgerIcon){
+				hamburgerIcon.style.display = 'block';
+			}
+			if (closeIcon) {
+				closeIcon.style.display = 'none';
+			}
+			if (mobileMenu) {
+				mobileMenu.style.display = 'none';
+			}
+		} else {
+			if(hamburgerIcon){
+				hamburgerIcon.style.display = 'none';
+			}
+			if (closeIcon) {
+				closeIcon.style.display = 'block';
+			}
+			if (mobileMenu) {
+				mobileMenu.style.display = 'block';
+			}
+		} 
+	}
+	document.getElementById("mobile-menu-icon")?.addEventListener("click", handleMenuIconClick);
+</script>
 
 <style>
 	nav {
@@ -31,7 +77,36 @@
 	.desktop-menu {
 		display:flex;
 	}
-	
+
+	#mobile-menu {
+		display: none;
+		gap: 1rem;
+		width: 100%;
+		height: 30rem;
+		background-color: rgba(0, 0, 0, 0.8);
+		position: absolute;
+		top: 2.25rem;
+		padding-top: 1.5rem;
+	}
+
+	#mobile-menu > li {
+		width: 70%;
+		margin: 2rem 0;
+	}
+
+	#mobile-menu > li > a {
+		color: var(--c-white);
+		font-size: 1.2rem;
+	}
+
+	#close-icon {
+		display: none;
+	}
+
+	#hamburger-icon {
+		display: block;
+	}
+
 	.mobile-menu-icon{
 		display: none;
 		height: 100%;
