@@ -31,6 +31,11 @@ import Nav from '../components/Nav.astro';
 			letter-spacing: 0.0625em;
 		}
 
+		.button-wrapper {
+			margin-top: 2rem;
+			margin-bottom: 4rem;
+		}
+
 		@media (max-width: 750px) {
 			.hero {
 				min-height: 100vw;
@@ -50,6 +55,11 @@ import Nav from '../components/Nav.astro';
 		</header>
 		<div class="wrapper">
 			<div class="bio wrapper">
+				<h2>The Project</h2>
+				<p>The purpose of this project is to demonstrate how to use the Astro framework to build a website faster. The content is about planets in the Solar system with images and introductions of each planet. The website is responsive for desktop and mobile screens.</p>
+				<p class="button-wrapper">
+					<a class="button" href="https://github.com/ChenWarren/solar-system-planets">Source Code</a>
+				</p>
 				<h2>About Astro</h2>
 				<p>
 					<a href="https://astro.build/">Astro</a> is JavaScript framework for building faster websites. Astro extracts UI into smaller, isolated components that allows you to assamble it on mutilple web pages. Astro has built-in support for <a href="https://daringfireball.net/projects/markdown/">Markdown</a> files.
