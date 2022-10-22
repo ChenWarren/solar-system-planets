@@ -24,7 +24,7 @@
     width: 100%;
     height: auto;
     filter: brightness(0.7);
-    animation: zoom-out 120s infinite alternate ;
+    animation: zoom-out 90s infinite alternate ;
 }
 @keyframes zoom-out {
     0% {
