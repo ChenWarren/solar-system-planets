@@ -68,11 +68,6 @@ const { content } = Astro.props;
 				margin-bottom: 1em;
 			}
 
-			footer {
-				text-align: center;
-				margin-top: 3rem;
-			}
-
 			@media (max-width: 750px) {
 				.hero {
 					min-height: 80vw;
@@ -93,9 +88,9 @@ const { content } = Astro.props;
 		<div class="wrapper">
 			<div class="content"><slot /></div>
 		</div>
-		<footer>
+		<div class="wrapper">
 			<a href="/planets/" class="button">View More</a>
-		</footer>
+		</div>
 		<Footer />
 	</body>
 </html>
