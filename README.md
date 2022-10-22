@@ -6,7 +6,9 @@
 
 ## Introduction
 
-This is a Demo website code by [Astro](https://astro.build/).
+The purpose of this project is to demonstrate how to use the [Astro](https://astro.build/) framework to build a website faster. The content is about planets in the Solar system with images and introductions of each planet. The website is responsive for desktop and mobile screens. 
+
+Demo: [Planets](https://our-planets-340bd.web.app/)
 
 Developer: [Warren Chen](https://github.com/ChenWarren/)
 
@@ -28,6 +30,6 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## 👀 Want to learn more about Astro?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [Astro documentation](https://docs.astro.build) or jump into Astro [Discord server](https://astro.build/chat).
