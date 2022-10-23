@@ -214,6 +214,28 @@ p {
 				transform: translateX(0);
 	}
 }
+/* Animation slide up */
+@-webkit-keyframes slide-up {
+	0% {
+		-webkit-transform: translateY(+10%);
+				transform: translateY(+10%);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}
+}
+@keyframes slide-up {
+	0% {
+		-webkit-transform: translateY(+10%);
+				transform: translateY(+10%);
+	}
+	100% {
+		-webkit-transform: translateY(0);
+				transform: translateY(0);
+	}
+}
+
 /* Animation Slide-right */
 @-webkit-keyframes slide-right {
 	0% {
