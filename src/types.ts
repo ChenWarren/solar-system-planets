@@ -5,4 +5,5 @@ export interface Planet {
 	publishDate: string;
 	tags: string[];
 	img: string;
+	order: number;
 }

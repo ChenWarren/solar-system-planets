@@ -3,11 +3,17 @@
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Collection from '../components/Collection.astro';
 import type { Planet } from '../types';
 
 // Data Fetching: List all Markdown posts in the repo.
-const planets = await Astro.glob<Planet>('./planet/*.md');
-const featuredPlanet = planets[0]!;
+const planets = (await Astro.glob<Planet>('./planet/*.md'))
+	.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
+
+	// Load all planet MD files sorted by Order
+const innerPlanets = planets.slice(0, 4);
+
+const outerPlanets = planets.slice(4, planets.length);
 
 ---
 
@@ -20,6 +26,7 @@ const featuredPlanet = planets[0]!;
 	<style>
 		.wrapper {
 			display: flex;
+			flex-direction: column;
 			position: relative;
 			margin-bottom: 2em;
 		}
@@ -85,8 +92,8 @@ const featuredPlanet = planets[0]!;
 		<header class="hero">
 		</header>
 		<main class="wrapper">
-			<div class="grid">
-				<div class="section">
+			<section class="grid">
+				<article class="section">
 					<h1 class="sectionTitle">The Solar System</h1>
 					<!-- <h3>In The Solar System</h3> -->
 					<p class="bio">
@@ -95,8 +102,14 @@ const featuredPlanet = planets[0]!;
 					<p>
 						<a class="button" href="/solar-system">Read more</a>
 					</p>
-				</div>
-			</div>
+				</article>
+			</section>
+			<section class="mt-4">
+				<Collection planets={innerPlanets} title="Inner Solar System" grid="grid1" position="position-down"/>
+			</section>
+			<section class="mt-4">
+				<Collection planets={outerPlanets} title="Outer Solar System" grid="grid-line" position="position-up"/>
+			</section>
 		</main>
 		<Footer />
 	</body>

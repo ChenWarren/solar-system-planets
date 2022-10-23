@@ -1,0 +1,57 @@
+---
+import PortfolioPreview from "./PortfolioPreview.astro";
+import type { MarkdownInstance } from 'astro';
+import type { Planet } from "../types";
+
+interface Props {
+    planets: MarkdownInstance<Planet>[];
+    title: string;
+    grid: string;
+    position: string;
+}
+const planets = Astro.props.planets;
+const sectionTitle = Astro.props.title;
+const grid = Astro.props.grid;
+const position = Astro.props.position;
+---
+
+<div>
+    <h2>{sectionTitle}</h2>
+    <div class={`${grid}`}>
+        {planets.map((planet, i) => (
+            <div class={`item${i}`}>
+                <PortfolioPreview planet={planet} position={position}/>
+            </div>
+            ))}
+    </div>
+</div>
+
+<style>
+    .item0 { grid-area: a;}
+    .item1 { grid-area: b;}
+    .item2 { grid-area: c;}
+    .item3 { grid-area: d;}
+    .grid1 {
+        display: grid;
+        grid-template-areas: 
+            "a b"
+            "a c"
+            "d d";
+    }
+    .grid-line {
+        display: grid;
+        grid-template-areas: 
+            "a b" 
+            "c d";
+    }
+    @media (max-width: 750px) {
+        .grid1, 
+        .grid-line {
+            grid-template-areas: 
+                "a"
+                "b"
+                "c"
+                "d";
+        }
+    } 
+</style>

@@ -5,12 +5,9 @@ import Nav from '../components/Nav.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import type { Planet } from '../types';
 
+// Load all planet MD files sorted by Order
 const planets = (await Astro.glob<Planet>('./planet/*.md'))
-	.filter(({ frontmatter }) => !!frontmatter.publishDate)
-	.sort(
-		(a, b) =>
-			new Date(b.frontmatter.publishDate).valueOf() - new Date(a.frontmatter.publishDate).valueOf()
-	);
+	.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 ---
 
 <html lang="en">
@@ -47,7 +44,7 @@ const planets = (await Astro.glob<Planet>('./planet/*.md'))
 			<h1 class="title">Planets</h1>
 			<h3 class="subtitle">In Solar System</h3>
 			<div class="grid">
-				{planets.map((planet) => <PortfolioPreview planet={planet} />)}
+				{planets.map((planet) => <PortfolioPreview planet={planet} position={"position-up"}/>)}
 			</div>
 		</div>
 		<Footer />
