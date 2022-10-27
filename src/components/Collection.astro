@@ -6,20 +6,45 @@ import type { Planet } from "../types";
 interface Props {
     planets: MarkdownInstance<Planet>[];
     title: string;
+    description: string;
     grid: string;
     position: string;
 }
 const planets = Astro.props.planets;
 const sectionTitle = Astro.props.title;
+const sectionDescription = Astro.props.description;
 const grid = Astro.props.grid;
 const position = Astro.props.position;
 ---
 
+<script>
+    const cards = document.querySelectorAll(".colection");
+    const options = {
+		root: null,
+		threshold: 0,
+		rootMargin: "50px"
+	};
+    const observer = new IntersectionObserver((entries, observer)=>{
+        entries.forEach(entry => {
+			if(entry.isIntersecting){
+				entry.target.classList.add("transition-animation");
+			} else {
+				entry.target.classList.remove("transition-animation");
+			}
+        });
+    }, options);
+
+	cards.forEach(card => {
+		observer.observe(card);
+	})
+</script>
+
 <div>
     <h2>{sectionTitle}</h2>
+    <p class="collection-description">{sectionDescription}</p>
     <div class={`${grid}`}>
         {planets.map((planet, i) => (
-            <div class={`item${i}`}>
+            <div class={`item${i} colection`}>
                 <PortfolioPreview planet={planet} position={position}/>
             </div>
             ))}
@@ -27,10 +52,23 @@ const position = Astro.props.position;
 </div>
 
 <style>
-    .item0 { grid-area: a;}
-    .item1 { grid-area: b;}
-    .item2 { grid-area: c;}
-    .item3 { grid-area: d;}
+    .colection{
+        opacity: 0;
+    }
+
+    .item0 { 
+        grid-area: a;
+    }
+    .item1 { 
+        grid-area: b;
+    }
+    .item2 { 
+        grid-area: c;
+    }
+    .item3 { 
+        grid-area: d;
+    }
+
     .grid1 {
         display: grid;
         grid-template-areas: 
@@ -38,12 +76,24 @@ const position = Astro.props.position;
             "a c"
             "d d";
     }
+
     .grid-line {
         display: grid;
         grid-template-areas: 
             "a b" 
             "c d";
     }
+
+    .transition-animation {
+		animation: easy-in 600ms forwards;
+	}
+
+    .collection-description {
+        width: 50%;
+        line-height: 2;
+        margin-bottom: 3rem;
+    }
+
     @media (max-width: 750px) {
         .grid1, 
         .grid-line {

@@ -10,11 +10,9 @@ import type { Planet } from '../types';
 const planets = (await Astro.glob<Planet>('./planet/*.md'))
 	.sort((a, b) => a.frontmatter.order - b.frontmatter.order);
 
-	// Load all planet MD files sorted by Order
+// Load all planet MD files sorted by Order
 const innerPlanets = planets.slice(0, 4);
-
 const outerPlanets = planets.slice(4, planets.length);
-
 ---
 
 <html lang="en">
@@ -42,7 +40,6 @@ const outerPlanets = planets.slice(4, planets.length);
 			background-position: center;
 			background-image: linear-gradient(to left, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0)), url("https://upload.wikimedia.org/wikipedia/commons/1/19/Solar_System_true_color.jpg");
 			min-height: 30vw;
-			animation: zoom-out 90s infinite alternate;
 		}
 
 		@media (max-width: 750px) {
@@ -105,10 +102,10 @@ const outerPlanets = planets.slice(4, planets.length);
 				</article>
 			</section>
 			<section class="mt-4">
-				<Collection planets={innerPlanets} title="Inner Solar System" grid="grid1" position="position-down"/>
+				<Collection planets={innerPlanets} title="Inner Solar System" description="The Inner Solar System is the region of space surrounding the Sun up to the asteroid belt. It includes the planets Mercury, Venus, Earth, Mars, and the dwarf planet Ceres. All of the planets in the Inner Solar System are made of rock and metal, with the exception of Venus, which is mostly made of gas and has a very hot surface. The asteroids in the asteroid belt are also made of rock and metal." grid="grid1" position="position-down"/>
 			</section>
 			<section class="mt-4">
-				<Collection planets={outerPlanets} title="Outer Solar System" grid="grid-line" position="position-up"/>
+				<Collection planets={outerPlanets} title="Outer Solar System" description="The outer solar system is the region of the solar system that extends beyond the asteroid belt. It consists of the gas giants Jupiter, Saturn, Uranus, and Neptune, as well as the dwarf planet Pluto. The outer solar system is also home to many of the solar system's moons, including the Galilean moons of Jupiter, the Saturnian moons, the Uranian moons, and the Neptunian moons. The outer solar system is thought to have formed through the gravitational collapse of a giant molecular cloud." grid="grid-line" position="position-up"/>
 			</section>
 		</main>
 		<Footer />
