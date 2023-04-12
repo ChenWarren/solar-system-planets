@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import GoogleTag from './GoogleTag.astro';
 const {
 	title = 'Solar System Planets',
 	description = 'The information about the planets of the solar system',
 } = Astro.props;
 ---
 
+<GoogleTag/>
 <meta charset="UTF-8" />
 <meta name="description" property="og:description" content={description} />
 <meta name="viewport" content="width=device-width" />
